@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+    body {
+        background-color: #ECF7FB;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h1 {
+        @apply text-4xl font-bold;
+    }
+
+    h2 {
+        @apply text-3xl font-bold;
+    }
+
+    h3 {
+        @apply text-2xl font-bold;
+    }
+
+    p {
+        @apply flex flex-col;
+
+        .p-head {
+            @apply text-lg font-medium mb-5;
+        }
+
+    }
+
+}
+
+@layer components {
+
+    .bg-main {
+        background-color: #ECF7FB;
+    }
+
+    .card-shadow {
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+        @apply hover:bg-white hover:card-shadow rounded-lg p-5 duration-300;
+    }
+
+    .form-main {
+
+        @apply bg-white p-5 md:p-10 rounded-2xl flex flex-col gap-3 items-center w-full md:w-1/2 lg:w-[40%] xl:w-[25%] mx-5 card-shadow;
+
+        p {
+            @apply font-medium text-lg mb-2 text-left w-full;
+        }
+
+        input,
+        select,
+        textarea {
+            @apply w-full px-4 py-2 bg-main border border-slate-300 rounded-lg text-lg outline-none focus:border-slate-500 duration-300;
+        }
+
+        button {
+            @apply w-full py-2 bg-black text-white rounded-lg text-lg font-medium disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-700;
+        }
+
+        a {
+            @apply text-center hover:underline hover:underline-offset-4 duration-300 w-max;
+        }
+    }
+
+}
